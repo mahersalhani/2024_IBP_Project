@@ -1,0 +1,129 @@
+{
+  "NotFound": {
+    "title": "Page not found",
+    "description": "The page you are looking for does not exist.",
+    "return_home": "Return home"
+  },
+  "SideNav": {
+    "home": "Home",
+    "products": "Products",
+    "list": "List",
+    "add": "Add",
+    "users": "Users"
+  },
+  "Auth": {
+    "login": {
+      "api_res": {
+        "login_success": "Login success",
+        "wrong_credential": "Wrong email or password",
+        "login_fail": "Login failed",
+        "enter_valid_email": "Please enter a valid email",
+        "password_short": "Password must be at least 8 characters long",
+        "password_long": "Password must be at most 64 characters long"
+      },
+      "title": "Login",
+      "email": "Email",
+      "password": "Password",
+      "or": "OR",
+      "forget_password": "Forget password ?",
+      "continue": "Continue",
+      "new_user": "New user ?",
+      "create_account": "Create a new account",
+      "continue_with_google": "Continue with Google",
+      "invalid_google_provider": "The account is not registered with google"
+    },
+    "register": {
+      "api_res": {
+        "register_success": "Register success",
+        "email_taken": "Email already taken",
+        "username_taken": "Username already taken",
+        "register_fail": "Register failed",
+        "username_short": "Username must be at least 3 characters long",
+        "username_long": "Username must be at most 32 characters long",
+        "username_invalid": "Username is invalid",
+        "enter_valid_email": "Please enter a valid email",
+        "password_short": "Password must be at least 8 characters long",
+        "password_long": "Password must be at most 64 characters long",
+        "password_mismatch": "Confirm password must match password",
+        "username_not_valid": "Username is not valid"
+      },
+      "title": "Register",
+      "or": "OR",
+      "email": "Email",
+      "password": "Password",
+      "confirm_password": "Confirm password",
+      "username": "Username",
+      "continue": "Continue",
+      "have_account": "Already have an account ?",
+      "login": "Login",
+      "continue_with_google": "Continue with Google",
+      "first_name": "First name",
+      "last_name": "Last name"
+    },
+    "verify_email": {
+      "api_res": {
+        "verify_email_success": "Email verified successfully",
+        "invalid_code": "Invalid code",
+        "code_expired": "Code expired",
+        "verify_email_fail": "Email verification failed"
+      },
+      "desc": "We have sent a code to your email {email} .",
+      "not_received": "Didn't receive the code ?",
+      "resend": "Resend"
+    },
+    "resend_verify_email": {
+      "api_res": {
+        "resend_verify_email_success": "Email sent successfully",
+        "resend_verify_email_fail": "Email sending failed",
+        "too_many_requests": "Too many requests"
+      }
+    },
+    "please_login": "Please login to continue",
+    "no_account": "Don't have an account ? ",
+    "signup": "Sign up"
+  },
+  "Editor": {
+    "text": "Text",
+    "heading": "Heading",
+    "link": "Link",
+    "image": "Image",
+    "list": "List",
+    "table": "Table",
+    "add_link": "Add link",
+    "select_image": "Select image",
+    "caption": "Caption"
+  },
+  "Product": {
+    "create": "Create product",
+    "product": "Product",
+    "details": "Details",
+    "images": "Images",
+    "cover_image": "Cover image",
+    "product_images": "Product images",
+    "tags": "Tags",
+    "tags_placeholder": "Add tags",
+    "create_tag": "Create tag {tag}",
+    "no_options": "No options",
+    "tags_hint": "Press enter to add a tag, tag should be at least 3 characters long",
+    "publish": "Publish"
+  },
+  "Common": {
+    "name": "Name",
+    "short_field": "Field should be at least 3 characters long",
+    "long_field": "Field should be at most 255 characters long",
+    "required": "This field is required",
+    "quantity": "Quantity",
+    "set_unlimited_quantity": "Set -1 for unlimited quantity.",
+    "price": "Price",
+    "sell_price": "Sell price",
+    "sell_price_desc": "Price after discount",
+    "sku": "SKU",
+    "generate_sku": "Generate SKU",
+    "file_size_limit": "File size should be at most 5MB",
+    "max_number_of_files": "Maximum number of files is 15",
+    "file_type_not_supported": "File type not supported",
+    "drag_and_drop": "Drag & Drop your images here",
+    "upload": "Upload",
+    "description": "Description"
+  }
+}
