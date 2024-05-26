@@ -134,17 +134,6 @@ const UsersTable = () => {
             sortable: false,
             render: ({ isBlocked }) => <div>{renderBoolean(isBlocked)}</div>,
           },
-          {
-            accessor: 'actions',
-            title: 'Actions',
-            render: ({ uid }) => (
-              <div className="flex items-center space-x-2">
-                <Link href={paths.users.edit(uid)} className="text-primary-500">
-                  <LuPencil size={20} />
-                </Link>
-              </div>
-            ),
-          },
         ]}
         onPageChange={(page) => {
           setSearch({ ...search, page });

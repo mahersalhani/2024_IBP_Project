@@ -114,6 +114,7 @@ export function AuthProvider(props: AuthProviderProps) {
             profileImage: userData.profileImage || undefined,
             email: userData?.email || undefined,
             phone: userData?.phone || undefined,
+            displayName: userData?.displayName,
             accountType: userData.accountType,
           },
         },
@@ -166,6 +167,7 @@ export function AuthProvider(props: AuthProviderProps) {
                 profileImage: user.profileImage,
                 email: user?.email || undefined,
                 phone: user?.phone || undefined,
+                displayName: user.displayName,
                 accountType: user.accountType,
               },
             },
@@ -202,6 +204,7 @@ export function AuthProvider(props: AuthProviderProps) {
                 username: `${user?.username}`,
                 phone: user?.phone || undefined,
                 placeholder: user.placeholder,
+                displayName: user.displayName,
               },
             },
           });

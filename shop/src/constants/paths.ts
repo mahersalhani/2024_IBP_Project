@@ -5,6 +5,7 @@ export const paths = {
   login: '/login',
   signup: '/signup',
   forgetPassword: '/forgot-pass',
+  product_detail: (id: string) => `/product/${id}`,
 
   dashboard: {
     index: '/dashboard',

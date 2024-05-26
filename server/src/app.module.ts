@@ -3,6 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import { MiddlewareConsumer, Module, NestModule, Scope } from '@nestjs/common';
 import { RedisModule } from '@nestjs-modules/ioredis';
 import { ThrottlerModule } from '@nestjs/throttler';
+import { EventEmitterModule } from '@nestjs/event-emitter';
 
 import * as Joi from 'joi';
 import { DataSource } from 'typeorm';
@@ -16,7 +17,7 @@ import {
   ThrottlerConfigService,
 } from '@/common';
 import { DatabaseModule } from '@/database';
-import { ImageModule, ShopAuthModule, ShopUserModule, AdminModule } from '@/apps';
+import { ImageModule, ShopAuthModule, ShopUserModule, AdminModule, GatewayModule } from '@/apps';
 import { ShopJwtMiddleware } from '@/middlewares';
 import { ShopModule } from './apps/shop/shop.module';
 
@@ -88,12 +89,16 @@ import { ShopModule } from './apps/shop/shop.module';
     // Email
     EmailModule,
 
+    // Event
+    EventEmitterModule.forRoot(),
+
     // Apps
     ImageModule,
     ShopAuthModule,
     ShopUserModule,
     AdminModule,
     ShopModule,
+    GatewayModule,
   ],
   controllers: [],
   providers: [

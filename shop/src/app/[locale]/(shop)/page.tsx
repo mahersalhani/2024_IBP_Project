@@ -1,7 +1,15 @@
+import HeroBanner from '@/components/SectionHero/HeroBanner';
+import { Suspense } from 'react';
+import CollectionProducts from './_components/collection-products';
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      Maher
-    </main>
+    <div className="relative overflow-hidden container">
+      <HeroBanner />
+
+      <Suspense fallback={<div>Loading...</div>}>
+        <CollectionProducts />
+      </Suspense>
+    </div>
   );
 }

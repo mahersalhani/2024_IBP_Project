@@ -22,6 +22,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   fontClass?: string;
   labelClass?: string;
   desc?: string;
+  containerClass?: string;
 }
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
@@ -39,12 +40,13 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
       type = 'text',
       labelClass = '',
       desc,
+      containerClass,
       ...args
     },
     ref
   ) => {
     return (
-      <div>
+      <div className={cn(containerClass)}>
         {label && (
           <label htmlFor={args.id} className={labelClass}>
             {label} {required && <span className="text-red-500">*</span>}
