@@ -10,6 +10,9 @@ export const paths = {
   dashboard: {
     index: '/dashboard',
   },
+  inbox: {
+    index: '/dashboard/inbox',
+  },
   products: {
     index: '/dashboard/products',
     add: '/dashboard/products/add',

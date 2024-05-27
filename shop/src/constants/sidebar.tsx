@@ -1,4 +1,4 @@
-import { LuHome, LuPackage, LuUser } from 'react-icons/lu';
+import { LuHome, LuPackage, LuUser, LuInbox } from 'react-icons/lu';
 
 import { SideNavItem } from '@/types';
 
@@ -16,6 +16,11 @@ export const SIDE_NAV_ITEMS: SideNavItem[] = [
     icon: <LuUser size={24} />,
   },
   {
+    title: 'inbox',
+    path: paths.inbox.index,
+    icon: <LuInbox size={24} />,
+  },
+  {
     title: 'products',
     path: paths.products.index,
     icon: <LuPackage size={24} />,
@@ -25,6 +30,7 @@ export const SIDE_NAV_ITEMS: SideNavItem[] = [
       { title: 'add', path: paths.products.add },
     ],
   },
+
   // {
   //   title: 'Projects',
   //   path: '/projects',

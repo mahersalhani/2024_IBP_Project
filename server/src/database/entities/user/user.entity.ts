@@ -4,18 +4,24 @@ import { addImageURL } from '@/utils';
 import { AbstractEntity } from '@/database/abstract.entity';
 
 import { Verify } from './verify.entity';
+import { Conversation } from '../conversation';
+import { ApiProperty } from '@nestjs/swagger';
 
 @Entity({ name: 'users' })
 export class User extends AbstractEntity<User> {
   @Column({ unique: true })
+  @ApiProperty()
   email: string;
 
   @Column({ nullable: true })
+  @ApiProperty({ required: false })
   firstName?: string;
 
   @Column({ nullable: true })
+  @ApiProperty({ required: false })
   lastName?: string;
 
+  @ApiProperty({ example: 'John Doe', description: 'Display name' })
   displayName: string;
 
   @Column({ type: 'enum', enum: ['password', 'google'] })
@@ -24,12 +30,15 @@ export class User extends AbstractEntity<User> {
   @Column({ nullable: true })
   password: string;
 
+  @ApiProperty({ example: '123456', description: 'User ID' })
   @Column()
   uid: string;
 
+  @ApiProperty({ example: 'https://example.com/avatar.jpg', description: 'Avatar URL' })
   @Column({ nullable: true })
   avatar: string;
 
+  @ApiProperty({ example: 'https://example.com/avatar.jpg', description: 'Avatar URL' })
   avatarUrl: string;
 
   @Column({ nullable: true })
@@ -46,6 +55,9 @@ export class User extends AbstractEntity<User> {
 
   @OneToOne(() => Verify, (verify) => verify.user, { cascade: true })
   verify: Verify;
+
+  @OneToOne(() => Conversation, (conversation) => conversation.user, { cascade: true })
+  conversation: Conversation;
 
   @AfterLoad()
   setAvatarUrl() {

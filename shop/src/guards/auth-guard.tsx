@@ -14,10 +14,11 @@ interface AuthGuardProps {
   children: ReactNode;
   isSeller?: boolean;
   callback?: () => void;
+  isCustomer?: boolean;
 }
 
 export const AuthGuard = (props: AuthGuardProps) => {
-  const { children, mostBeVerified = true, callback, isSeller = false } = props;
+  const { children, mostBeVerified = true, callback, isSeller = false, isCustomer = false } = props;
 
   const router = useRouter();
   const pathname = usePathname();
@@ -41,6 +42,9 @@ export const AuthGuard = (props: AuthGuardProps) => {
       } else {
         if (isSeller) {
           if (user?.accountType === 'customer') return router.replace(paths.index);
+          else setChecked(true);
+        } else if (isCustomer) {
+          if (user?.accountType === 'admin') return router.replace(paths.index);
           else setChecked(true);
         } else {
           setChecked(true);

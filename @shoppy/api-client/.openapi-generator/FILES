@@ -3,6 +3,7 @@
 api.ts
 base.ts
 clients/admin-api.ts
+clients/conversation-api.ts
 clients/image-api.ts
 clients/shop-api.ts
 clients/shop-auth-api.ts
@@ -17,6 +18,8 @@ models/delete-image-dto.ts
 models/delete-images-dto.ts
 models/index.ts
 models/login-dto.ts
+models/message-dto.ts
+models/message.ts
 models/ok-res.ts
 models/product-dto.ts
 models/products-res.ts
@@ -28,6 +31,7 @@ models/sign-in-provider.ts
 models/upload-image-res.ts
 models/user-res.ts
 models/user-role.ts
+models/user.ts
 models/users-res.ts
 models/validation-error-res.ts
 models/verify-email-dto.ts

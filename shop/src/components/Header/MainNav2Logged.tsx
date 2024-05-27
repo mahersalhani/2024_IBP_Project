@@ -9,6 +9,7 @@ import Logo from '../Logo/Logo';
 import { HiMiniXMark } from 'react-icons/hi2';
 import Navigation from '@/shared/Navigation/Navigation';
 import AvatarDropdown from './avatar-dropdown';
+import MenuBar from '@/shared/MenuBar/MenuBar';
 
 export interface MainNav2LoggedProps {}
 
@@ -63,16 +64,16 @@ const MainNav2Logged: FC<MainNav2LoggedProps> = () => {
   const renderContent = () => {
     return (
       <div className="h-20 flex justify-between">
-        {/* <div className="flex items-center lg:hidden flex-1">
+        <div className="flex items-center lg:hidden flex-1">
           <MenuBar />
-        </div> */}
+        </div>
 
         <div className="lg:flex-1 flex items-center">
           <Logo className="flex-shrink-0" />
         </div>
 
         <div className="flex-[2] hidden lg:flex justify-center mx-4">
-          {showSearchForm ? renderSearchForm() : <Navigation />}
+          <Navigation />
         </div>
 
         <div className="flex-1 flex items-center justify-end text-slate-700 dark:text-slate-100">

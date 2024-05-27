@@ -15,6 +15,7 @@
 
 
 export * from './clients/admin-api';
+export * from './clients/conversation-api';
 export * from './clients/image-api';
 export * from './clients/shop-api';
 export * from './clients/shop-auth-api';

@@ -9,7 +9,8 @@
     "products": "Products",
     "list": "List",
     "add": "Add",
-    "users": "Users"
+    "users": "Users",
+    "inbox": "Inbox"
   },
   "Auth": {
     "login": {

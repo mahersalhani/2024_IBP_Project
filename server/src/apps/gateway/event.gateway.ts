@@ -1,3 +1,4 @@
+import { Message } from '@/database';
 import { OnGatewayConnection, OnGatewayDisconnect, WebSocketGateway, WebSocketServer } from '@nestjs/websockets';
 import { Socket, Server } from 'socket.io';
 
@@ -11,17 +12,18 @@ export class EventGateway implements OnGatewayConnection, OnGatewayDisconnect {
   @WebSocketServer()
   server: Server;
 
-  handleMessage(message: string, conversationId: number) {
-    this.server.to(`conversation-${conversationId}`).emit('getMessage', message);
+  handleMessage(data: Message, uid: string) {
+    console.log('handleMessage', data);
+    this.server.to(uid).emit('getMessage', data);
   }
 
   handleConnection(client: Socket) {
-    const conversationId = client.handshake.query['conversationId'];
-    client.join(`conversation-${conversationId}`);
+    const uid = client.handshake.query['uid'];
+    client.join(uid);
   }
 
   handleDisconnect(client: Socket) {
-    const conversationId = client.handshake.query['conversationId'];
-    client.leave(`conversation-${conversationId}`);
+    const uid = client.handshake.query['uid'];
+    client.leave(`${uid}`);
   }
 }

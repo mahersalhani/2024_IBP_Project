@@ -5,6 +5,7 @@ import { ChevronDownIcon } from '@heroicons/react/24/solid';
 import React, { FC, Fragment, useState } from 'react';
 import { Route } from '@/routers/types';
 import Link from 'next/link';
+import { useAuth } from '@/context/auth-context';
 
 export interface NavItemType {
   id: string;
@@ -14,6 +15,8 @@ export interface NavItemType {
   children?: NavItemType[];
   type?: 'dropdown' | 'megaMenu' | 'none';
   isNew?: boolean;
+  onlyCustomer?: boolean;
+  onlyAdmin?: boolean;
 }
 
 export interface NavigationItemProps {
@@ -22,6 +25,7 @@ export interface NavigationItemProps {
 
 const NavigationItem: FC<NavigationItemProps> = ({ menuItem }) => {
   const [menuCurrentHovers, setMenuCurrentHovers] = useState<string[]>([]);
+  const { user } = useAuth();
 
   const onMouseEnterMenu = (id: string) => {
     setMenuCurrentHovers((state) => [...state, id]);
@@ -198,6 +202,9 @@ const NavigationItem: FC<NavigationItemProps> = ({ menuItem }) => {
       </div>
     );
   };
+
+  if (menuItem.onlyCustomer && user?.accountType !== 'customer') return null;
+  if (menuItem.onlyAdmin && user?.accountType !== 'admin') return null;
 
   switch (menuItem.type) {
     case 'dropdown':

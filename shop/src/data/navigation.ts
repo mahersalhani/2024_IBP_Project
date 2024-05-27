@@ -187,5 +187,12 @@ export const NAVIGATION_DEMO_2: NavItemType[] = [
     id: ncNanoId(),
     href: '/connect-us',
     name: 'Connect Us',
+    onlyCustomer: true,
+  },
+  {
+    id: ncNanoId(),
+    href: '/dashboard',
+    name: 'Dashboard',
+    onlyAdmin: true,
   },
 ];

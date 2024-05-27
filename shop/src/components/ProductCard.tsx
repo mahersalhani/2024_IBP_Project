@@ -1,7 +1,5 @@
 'use client';
 
-import React, { useState } from 'react';
-import { useParams } from 'next/navigation';
 import { StarIcon } from '@heroicons/react/24/solid';
 
 import { Link } from '@/navigation';
@@ -9,6 +7,7 @@ import { ProductDto } from '@shoppy/api-client';
 import { paths } from '@/constants';
 
 import NcImage from './NcImage/NcImage';
+import Prices from './Prices';
 
 export interface ProductCardProps {
   data: ProductDto;
@@ -20,12 +19,7 @@ export interface ProductCardProps {
 }
 
 const ProductCard = ({ className = '', data, isLiked, index }: ProductCardProps) => {
-  // const { id, name, variants, designDetails, slug } = data;
-  const { id, name, slug, price, coverImage, description, isPublished, quantity } = data;
-
-  // const [variantActive, setVariantActive] = useState(defaultVariantIndex !== -1 ? defaultVariantIndex : 0);
-  const [showModalQuickView, setShowModalQuickView] = useState(false);
-  const params = useParams();
+  const { id, name, slug, price, coverImage, description } = data;
 
   return (
     <>
@@ -49,10 +43,11 @@ const ProductCard = ({ className = '', data, isLiked, index }: ProductCardProps)
         <div className="space-y-4 px-2.5 pt-5 pb-2.5">
           <div>
             <h2 className="nc-ProductCard__title text-base font-semibold transition-colors">{name}</h2>
+            <p className="text-sm text-slate-500 dark:text-slate-400 line-clamp-2">{description}</p>
           </div>
 
           <div className="flex justify-between items-end ">
-            {/* <Prices price={price} salePrice={sellPrice} /> */}
+            <Prices price={price} />
 
             <div className="flex items-center mb-0.5">
               <StarIcon className="w-5 h-5 pb-[1px] text-amber-400" />
