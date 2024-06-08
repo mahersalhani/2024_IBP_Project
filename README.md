@@ -1,6 +1,6 @@
 # 2024_IBP_Project
 
-A brief description of what this project is about.
+E commerce website using nextjs and nestjs
 
 ## YouTube Video
 
